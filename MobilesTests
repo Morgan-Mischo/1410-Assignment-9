@@ -1,0 +1,102 @@
+package mobiles;
+
+import org.junit.Test;
+import junit.framework.TestCase;
+
+public class MobilesTests extends TestCase
+{  
+    /**
+     * Test if weight returns the total weight of all the Bobs
+     */
+    @Test
+    public void testWeight()
+    {
+        Mobile m6 = new Mobile(28, 7, new Mobile(10), new Mobile(40));  
+        assertEquals(m6.weight(), 50); 
+    }
+    
+    
+    /**
+     * Test if isBalanced reports whether all rods are balanced. should return true
+     */
+    @Test
+    public void testIsBalancedTrue ()
+    {
+        Mobile m6 = new Mobile(28, 7, new Mobile(10), new Mobile(40));  
+        assertTrue(m6.isBalanced()); 
+    }
+    
+    
+    
+    /**
+     * Test if isBalanced reports whether all rods are balanced. Should return false
+     */
+    @Test
+    public void testIsBalancedFalse ()
+    {
+        Mobile m6 = new Mobile(28, 7, new Mobile(5), new Mobile(40));  
+        assertFalse(m6.isBalanced()); 
+    }
+    
+    
+    
+    /**
+     * Tests whether depth returns the length of the longest path through the mobile
+     */
+    @Test
+    public void testDepth()
+    {
+        Mobile m6 = new Mobile(28, 7, new Mobile(10), new Mobile(40));  
+        assertEquals(m6.depth(), 2); 
+        
+    }
+    
+    
+    /**
+     * Tests whether bobCount returns the number of bobs
+     */
+    @Test
+    public void testBobCount ()
+    {
+        Mobile m6 = new Mobile(28, 7, new Mobile(10), new Mobile(40));  
+        assertEquals(m6.bobCount(), 2); 
+        
+    }
+    
+    
+    /**
+     * Tests whether rodCount returns the number of rods
+     */
+    @Test
+    public void testRodCount ()
+    {
+        Mobile m6 = new Mobile(28, 7, new Mobile(10), new Mobile(40));  
+        assertEquals(m6.rodCount(), 1); 
+    }
+    
+    
+    
+    /**
+     * Tests whether longestRod returns the length of the longest rod
+     */
+    @Test
+    public void testLongestRod ()
+    {
+        Mobile m6 = new Mobile(28, 7, new Mobile(10), new Mobile(40));  
+        assertEquals(m6.longestRod(), 35); 
+    }
+    
+    
+    
+    /**
+     * Tests whether heaviestBob returns the weight of the heaviest Bob
+     */
+    @Test
+    public void testHeaviestBob()
+    {
+        Mobile m6 = new Mobile(28, 7, new Mobile(10), new Mobile(40));  
+        assertEquals(m6.heaviestBob(), 40); 
+    }
+    
+
+}
